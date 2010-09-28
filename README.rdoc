@@ -16,9 +16,11 @@ In your model:
         :storage => :cloudfile
   end
 
+== Configuration
+
 In your config directory make a file called paperclip_cloud_storage.yml
 
-    You can 'environment-space' this just like you do to your database.yml file, so different environments can use different accounts:
+You can 'environment-space' this just like you do to your database.yml file, so different environments can use different accounts:
 
          development:
            username: hayley
@@ -31,22 +33,26 @@ In your config directory make a file called paperclip_cloud_storage.yml
            api_key: 87k...
            servicenet: true
 
-       This is not required to, however, and the file may simply look like this:
-         username: minter...
-         api_key: 11q...
+This is not required to, however, and the file may simply look like this:
+    username: minter...
+    api_key: 11q...
 
-       In which case, those access keys will be used in all environments. You can also
-       put your container name in this file, instead of adding it to the code directly.
-       This is useful when you want the same account but a different container for
-       development versus production.
+In which case, those access keys will be used in all environments. You can also
+put your container name in this file, instead of adding it to the code directly.
+This is useful when you want the same account but a different container for
+development versus production.
 
-     * +container+: This is the name of the Cloud Files container that will store your files.
-       This container should be marked "public" so that the files are available to the world at large.
-       If the container does not exist, it will be created and marked public.
+* +container+: This is the name of the Cloud Files container that will store your files.
+This container should be marked "public" so that the files are available to the world at large.
+If the container does not exist, it will be created and marked public.
 
-     * +path+: This is the path under the container in which the file will be stored. The
-       CDN URL will be constructed from the CDN identifier for the container and the path. This is what
-       you will want to interpolate. Keys should be unique, like filenames, and despite the fact that
-       Cloud Files (strictly speaking) does not support directories, you can still use a / to
-       separate parts of your file name, and they will show up in the URL structure.
+* +path+: This is the path under the container in which the file will be stored. The
+CDN URL will be constructed from the CDN identifier for the container and the path. This is what
+you will want to interpolate. Keys should be unique, like filenames, and despite the fact that
+Cloud Files (strictly speaking) does not support directories, you can still use a / to
+separate parts of your file name, and they will show up in the URL structure.
+
+== Test
+
+Coming soon needed for project now. If you would like to contribute super, and thanks.
 
