@@ -1,6 +1,4 @@
-$LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
-
-include_files = ["README*", "LICENSE", "Rakefile", "init.rb", "{lib,tasks,test,rails,generators,shoulda_macros}/**/*"].map do |glob|
+include_files = ["README*", "LICENSE", "Rakefile", "init.rb","lib/cloudfile.rb", "{lib,tasks,test,rails,generators,shoulda_macros}/**/*"].map do |glob|
   Dir[glob]
 end.flatten
 exclude_files = ["test/s3.yml", "test/debug.log", "test/paperclip.db", "test/doc", "test/doc/*", "test/pkg", "test/pkg/*", "test/tmp", "test/tmp/*"].map do |glob|
@@ -24,9 +22,11 @@ spec = Gem::Specification.new do |s|
   s.rdoc_options << '--line-numbers' << '--inline-source'
   s.requirements << "paperclip"
   s.requirements << "cloudfiles"
-  s.add_dependency 'activerecord'
-  s.add_dependency 'activesupport'
-  s.add_development_dependency 'shoulda'
-  s.add_development_dependency 'mocha'
-  s.add_development_dependency 'sqlite3-ruby'
+#  s.add_dependency 'activerecord'
+#  s.add_dependency 'activesupport'
+  s.add_dependency 'cloudfiles'
+  s.add_dependency 'paperclip'
+#  s.add_development_dependency 'shoulda'
+#  s.add_development_dependency 'mocha'
+#  s.add_development_dependency 'sqlite3-ruby'
 end
