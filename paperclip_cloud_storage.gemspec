@@ -9,6 +9,7 @@ spec = Gem::Specification.new do |s|
   s.name              = "paperclip_cloud_storage"
   s.version           = "0.1"
   s.author            = "Cid Dennis"
+  s.rubyforge_project = "paperclip_cloud_storage"
   s.email             = "cid.dennis@gmail.com"
   s.homepage          = "http://github.com/ciddennis/cloudfiles-paperclip-storage"
   s.description       = "Store Paperclip files on Rackspace CloudFiles"
